@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Outfit', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f0f0f0; /* Light background for better readability */
+  color: #fff; /* All text color set to white */
+  font-size: 16px; /* Default font size for body */
+}
+
+p {
+  font-size: 1.4rem; /* Reduced default font size for paragraphs */
+  color: inherit; /* Ensure paragraphs inherit parent color (white) */
+}
+
+h1 {
+  font-size: 4.8rem; /* Heading font size */
+  color: inherit; /* Ensure headings inherit parent color (white) */
+}
+
+.app {
+  width: 100%;
+  min-height: 100vh; /* Ensure app covers the entire viewport */
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.4);
+  overflow: hidden; /* Prevent scrolling */
+  padding: 2rem;
+  display: flex;
+  flex-direction: column; /* Adjusted to column for vertical alignment */
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+}
+
+.app:before {
+  content: '';
+  background: url('./assets/weather-bg.jpg') no-repeat center center/cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.app .search {
+  text-align: center;
+  margin-bottom: 2rem; /* Space between search input and container */
+}
+
+.app input {
+  padding: 0.7rem 1.5rem;
+  font-size: 1.4rem; /* Input font size */
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff; /* Input text color */
+  width: 70%; /* Adjusted width for better laptop experience */
+  max-width: 500px; /* Limit input width for larger screens */
+  text-align: center; /* Center align placeholder text */
+}
+
+::placeholder {
+  color: #fff; /* Placeholder text color */
+  text-align: center; /* Center align placeholder text */
+}
+
+.container {
+  width: 90%; /* Take up 90% of the viewport width */
+  max-width: 720px; /* Limit maximum width for laptop screens */
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.1); /* Translucent background */
+  border-radius: 20px; /* Rounded corners for container */
+  backdrop-filter: blur(10px); /* Apply blur to the background */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  position: relative; /* Ensure stacking context for z-index */
+  z-index: 1; /* Ensure it's above the blurred background */
+}
+
+.app .top {
+  width: 100%;
+  margin: 1rem auto;
+}
+
+.app .location {
+  text-align: center;
+}
+
+.app .temp {
+  text-align: center;
+}
+
+.app .description {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.app .bottom {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  margin: 1rem auto;
+}
+
+.app .bottom > div {
+  flex: 1 1 30%; /* Adjusted flex basis for better alignment */
+  margin: 0.5rem;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.5); /* Lighter background for sections */
+  border-radius: 12px; /* Rounded corners for sections */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle box shadow for sections */
+}
+
+.bold {
+  font-weight: 700;
+}
+
+/* Media Queries */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .app .search {
+    padding: 3rem;
+  }
+
+  .app input {
+    font-size: 1.6rem; /* Larger input font size for laptops */
+    padding: 1rem 2rem;
+  }
+
+  .container {
+    padding: 3rem; /* Increased padding for better spacing on laptop screens */
+  }
+
+  h1 {
+    font-size: 6rem;
+  }
+
+  p {
+    font-size: 1.6rem;
+  }
+
+  .app .description {
+    font-size: 1.6rem; /* Larger font size for description on laptops */
+  }
+
+  .app .bottom > div {
+    padding: 1.5rem;
+    font-size: 1.4rem; /* Slightly smaller font size for sections on laptops */
+  }
+}
+
+@media (max-width: 767px) {
+  .app input {
+    width: 90%; /* Adjust input width for smaller screens */
+  }
+}
